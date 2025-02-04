@@ -9,7 +9,7 @@ interface JourneyProps {
 const questions = [
   {
     question: "What was the first thing I noticed about you?",
-    answer: "Your eyes",
+    answer: "Those eyes",
     hint: "They caught my attention instantly"
   },
   {
