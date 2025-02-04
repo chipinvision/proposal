@@ -24,14 +24,16 @@ const questions = [
   }
 ];
 
-
 const Journey: React.FC<JourneyProps> = ({ onComplete, name }) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answer, setAnswer] = useState('');
   const [showHint, setShowHint] = useState(false);
 
   const handleSubmit = () => {
-    if (answer.toLowerCase().includes(questions[currentQuestion].answer)) {
+    const trimmedAnswer = answer.trim().toLowerCase(); // To remove any extra spaces and handle case-insensitivity
+    const correctAnswer = questions[currentQuestion].answer.toLowerCase().trim(); // Answer comparison
+
+    if (trimmedAnswer === correctAnswer) {
       if (currentQuestion === questions.length - 1) {
         onComplete();
       } else {
