@@ -33,6 +33,9 @@ const Journey: React.FC<JourneyProps> = ({ onComplete, name }) => {
     const trimmedAnswer = answer.trim().toLowerCase(); // To remove any extra spaces and handle case-insensitivity
     const correctAnswer = questions[currentQuestion].answer.toLowerCase().trim(); // Answer comparison
 
+    console.log(`User Answer: ${trimmedAnswer}`);
+    console.log(`Correct Answer: ${correctAnswer}`);
+
     if (trimmedAnswer === correctAnswer) {
       if (currentQuestion === questions.length - 1) {
         onComplete();
